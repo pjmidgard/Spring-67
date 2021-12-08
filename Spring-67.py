@@ -617,7 +617,7 @@ class compression:
                                             	sda21=bin(sda20)[2:]
                                            
                                             	cc=0
-                                            	if sda20>(2**48)-1:
+                                            	if sda20>(2**40)-1:
                                             		cc=1
                                             		
                                             	lenf=len(sda18)
