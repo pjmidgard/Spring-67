@@ -352,8 +352,10 @@ class compression:
                                     	T14=T14+1
                                     	ei=ei+8
                                     	
-                                    T12=sda2[0:(T14*8)-8]
-                                    sda2=sda2[0:T14*8]
+                                    T16=sda2[0:(T14*8)-8]
+                                    
+                                    T12 = int(T16, 2)
+                                    sda2=sda2[T14*8:]
                                     
                                     sda10=sda2
                                    
@@ -503,7 +505,7 @@ class compression:
                                    
                                     T1 = int(sda10, 2)
                                     T10=T1
-                                    
+                                    T12=0
                                     while T5!=1:
 	                                    T2=T1%2
 	                                    T3=T1
@@ -613,7 +615,7 @@ class compression:
 
                                             if T7==T10:
                                             	sda17=bin(T9)[2:]
-                                            	sda18=bin(T12)[:2]
+                                            	sda18=bin(T12)[2:]
                                             	lenf=len(sda18)
                                             	szx=""
                                             	xc=8-lenf%8
