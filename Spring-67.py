@@ -349,7 +349,7 @@ class compression:
                                     
                                     while sda11!="00000000":
                                     	sda11=sda2[ei:ei+8]
-                                        T14=T14+1
+                                    	T14=T14+1
                                     	ei=ei+8
                                     	
                                     T12=sda2[0:(T14*8)-8]
@@ -614,23 +614,20 @@ class compression:
                                             if T7==T10:
                                             	sda17=bin(T9)[2:]
                                             	sda18=bin(T12)[:2]
-                                            	 
-	                                            lenf=len(sda18)
-	                                            
-	                                            szx=""
-	                                            xc=8-lenf%8
-	                                            z=0
-	                                            if xc!=0:
-	                                                if xc!=8:
-	                                                    while z<xc:
-	                                                        szx="0"+szx
-	                                                        z=z+1
-	                                            sda19=szx+sda18+"00000000"
+                                            	lenf=len(sda18)
+                                            	szx=""
+                                            	xc=8-lenf%8
+                                            	z=0
+                                            	if xc!=0:
+                                            	        if xc!=8:
+                                            	            while z<xc:
+                                            	            	szx="0"+szx
+                                            	            	z=z+1
+                                            	sda19=szx+sda18+"00000000"
                                             	sda17=sda19+sda17
                                             	sda17="1"+sda17+"1"
                                             
-                                            else:
-                                             	sda17="01111111"+sda3
+       
                                            
                                             	
                                             
@@ -651,7 +648,10 @@ class compression:
                                                                                       
 
                                             sda17=sda17+szx
-                                            
+                                            L=len(sda17)
+                                            if L>lenf6F:
+                                                     
+                                            	sda17="01111111"+sda3
 
                                             n = int(sda17, 2)
                                             qqwslenf=len(sda17)
