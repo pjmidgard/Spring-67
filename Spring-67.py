@@ -179,7 +179,7 @@ class compression:
                                 lenf2=len(sda2)
                                 #print(lenf2)
                                 if i==1:
-                                    if lenf7>=(2**32)-1:
+                                    if lenf7>=(2**40)-1:
                                         raise SystemExit
                                         
                                     if lenf7<=0:
