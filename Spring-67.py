@@ -5,9 +5,6 @@ import os
 import binascii
 import math
 
-Deep=4
-Spin2=300
-
 lenf=0
 name=""
 szx=""
