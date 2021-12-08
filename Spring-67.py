@@ -344,15 +344,15 @@ class compression:
                                     T14=0
                                     
                                     
-                                    sda11=sda2[ei:ei+8]
+                                    sda11=sda2[ei:ei+48]
                                     T20 = int(sda11, 2)
                                     
                                     	
                                     	
-                                    T16=sda2[0+8:(T20*8)+8]
+                                    T16=sda2[0+48:(T20*8)+48]
                                     
                                     T12 = int(T16, 2)
-                                    sda2=sda2[(T20*8)+8:]
+                                    sda2=sda2[(T20*8)+48:]
                                     
                                     sda10=sda2
                                    
@@ -615,8 +615,9 @@ class compression:
                                             	sda18=bin(T12)[2:]
                                             	sda20=len(sda18)
                                             	sda21=bin(sda20)[2:]
+                                           
                                             	cc=0
-                                            	if sda20>255:
+                                            	if sda20>(2**48)-1:
                                             		cc=1
                                             		
                                             	lenf=len(sda18)
@@ -630,7 +631,7 @@ class compression:
                                             	            	z=z+1
                                             	lenf=len(sda21)
                                             	szx2=""
-                                            	xc=8-lenf%8
+                                            	xc=48-lenf%48
                                             	z=0
                                             	if xc!=0:
                                             	        if xc!=8:
