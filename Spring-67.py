@@ -291,7 +291,7 @@ class compression:
                                         	 raise SystemExit
                                         	
 
-                                    
+                                    g=0
 
                                     sda3=sda2
 
