@@ -360,7 +360,52 @@ class compression:
                                     
                                     
                                     sda32=sda2[ei:ei+8]
+                                    Ssize=len(sda32)
+                                   
+                                    if Ssize==0:
+                                                     
+                                         sda17="01111111"+sda3
+                                         #print(sda17)
+                                       
+                                         n = int(sda17, 2)
+                                         qqwslenf=len(sda17)
+                                         qqwslenf=(qqwslenf//8)*2
+                                         qqwslenf=str(qqwslenf)
+                                         qqwslenf="%0"+qqwslenf+"x"
+                                         jl=binascii.unhexlify(qqwslenf % n)
+                                         sssssw=len(jl)
+
+                                         szxzzza=""
+                                         szxzs=""
+                                            
+                                         f2.write(jl)
+                                         x2 = time()
+                                         x3=x2-x
+                                         return print(x3)
+                                        
                                     sda11=sda2[ei+8:ei+40+8]
+                                    Ssize=len(sda11)
+                                   
+                                    if Ssize==0:
+                                                     
+                                         sda17="01111111"+sda3
+                                         #print(sda17)
+                                       
+                                         n = int(sda17, 2)
+                                         qqwslenf=len(sda17)
+                                         qqwslenf=(qqwslenf//8)*2
+                                         qqwslenf=str(qqwslenf)
+                                         qqwslenf="%0"+qqwslenf+"x"
+                                         jl=binascii.unhexlify(qqwslenf % n)
+                                         sssssw=len(jl)
+
+                                         szxzzza=""
+                                         szxzs=""
+                                            
+                                         f2.write(jl)
+                                         x2 = time()
+                                         x3=x2-x
+                                         return print(x3)
                                     T22 = int(sda32, 2)
                                     T20 = int(sda11, 2)
                                     
@@ -368,11 +413,55 @@ class compression:
                                     	
                                     	
                                     T16=sda2[0+40+8:(T20*8)+40+8]
+                                    Ssize=len(T16)
+                                   
+                                    if Ssize==0:
+                                                     
+                                         sda17="01111111"+sda3
+                                         #print(sda17)
+                                       
+                                         n = int(sda17, 2)
+                                         qqwslenf=len(sda17)
+                                         qqwslenf=(qqwslenf//8)*2
+                                         qqwslenf=str(qqwslenf)
+                                         qqwslenf="%0"+qqwslenf+"x"
+                                         jl=binascii.unhexlify(qqwslenf % n)
+                                         sssssw=len(jl)
+
+                                         szxzzza=""
+                                         szxzs=""
+                                            
+                                         f2.write(jl)
+                                         x2 = time()
+                                         x3=x2-x
+                                         return print(x3)
                                     
                                     T12 = int(T16, 2)
                                     sda2=sda2[(T20*8)+40+8:]
                                     
                                     sda10=sda2
+                                    Ssize=len(sda10)
+                                   
+                                    if Ssize==0:
+                                                     
+                                         sda17="01111111"+sda3
+                                         #print(sda17)
+                                       
+                                         n = int(sda17, 2)
+                                         qqwslenf=len(sda17)
+                                         qqwslenf=(qqwslenf//8)*2
+                                         qqwslenf=str(qqwslenf)
+                                         qqwslenf="%0"+qqwslenf+"x"
+                                         jl=binascii.unhexlify(qqwslenf % n)
+                                         sssssw=len(jl)
+
+                                         szxzzza=""
+                                         szxzs=""
+                                            
+                                         f2.write(jl)
+                                         x2 = time()
+                                         x3=x2-x
+                                         return print(x3)
                                    
                                    
                                     T6 = int(sda10, 2)
@@ -477,12 +566,18 @@ class compression:
 
                                    
                                     sda17=szx+sda17
+                                    
+     
                                          
                                     sda2=sda17
                                     Circle_times2=Circle_times2+1
                                     
                                     
                                     if   Circle_times2==1:
+                                    	L=len(sda17)
+                                    if L>lenf6F:
+                                                     
+                                         sda17="01111111"+sda3
                                          #print(sda17)
                                        
                                          n = int(sda17, 2)
@@ -748,9 +843,9 @@ class compression:
 
                                             sda17=sda17+szx
                                             L=len(sda17)
-                                            #if L>lenf6F or cc==1:
+                                            if L>lenf6F or cc==1:
                                                      
-                                            	#sda17="01111111"+sda3
+                                            	sda17="01111111"+sda3
 
                                             n = int(sda17, 2)
                                             qqwslenf=len(sda17)
