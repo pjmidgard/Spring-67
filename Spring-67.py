@@ -348,7 +348,7 @@ class compression:
                                     sda11=sda2[ei+8:ei+40+8]
                                     T22 = int(sda32, 2)
                                     T20 = int(sda11, 2)
-                                    T12 = int(T16, 2)
+                                    
                                     
                                     	
                                     	
