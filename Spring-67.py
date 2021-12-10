@@ -613,12 +613,9 @@ class compression:
                                             if T7==T10:
                                             	sda17=bin(T9)[2:]
                                             	sda18=bin(T12)[2:]
-                                            	sda20=len(sda18)
-                                            	sda21=bin(sda20)[2:]
+                                            
                                            
-                                            	cc=0
-                                            	if sda20>(2**40)-1:
-                                            		cc=1
+                                            
                                             		
                                             	lenf=len(sda18)
                                             	szx=""
@@ -629,6 +626,15 @@ class compression:
                                             	            while z<xc:
                                             	            	szx="0"+szx
                                             	            	z=z+1
+                                               	
+                                            	            	
+                                            	sda19=szx+sda18
+                                            	sda20=len(sda19)
+                                            	sda20=sda20//8
+                                            	sda21=bin(sda20)[2:]
+                                            	cc=0
+                                            	if sda20>(2**40)-1:
+                                            		cc=1
                                             	lenf=len(sda21)
                                             	szx2=""
                                             	xc=40-lenf%40
@@ -637,9 +643,7 @@ class compression:
                                             	        if xc!=8:
                                             	            while z<xc:
                                             	            	szx2="0"+szx2
-                                            	            	z=z+1           	
-                                            	            	
-                                            	sda19=szx+sda18
+                                            	            	z=z+1     
                                             	sda17=szx2+sda21+sda19+sda17
                                             	sda17="1"+sda17+"1"
                                             
