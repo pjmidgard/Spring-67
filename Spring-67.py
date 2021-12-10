@@ -344,15 +344,18 @@ class compression:
                                     T14=0
                                     
                                     
-                                    sda11=sda2[ei:ei+40]
+                                    sda32=sda2[ei:ei+8]
+                                    sda11=sda2[ei+8:ei+40+8]
+                                    T22 = int(sda32, 2)
                                     T20 = int(sda11, 2)
+                                    T12 = int(T16, 2)
                                     
                                     	
                                     	
-                                    T16=sda2[0+40:(T20*8)+40]
+                                    T16=sda2[0+40+8:(T20*8)+40+8]
                                     
                                     T12 = int(T16, 2)
-                                    sda2=sda2[(T20*8)+40:]
+                                    sda2=sda2[(T20*8)+40+8:]
                                     
                                     sda10=sda2
                                    
@@ -401,8 +404,8 @@ class compression:
 	                                    if T6==T8:
 	                                    	T15=T15+1
 	                                    	
-
-                                    sda17=bin(T7)[2:]   
+                                    T23=T22+T7
+                                    sda17=bin(T23)[2:]   
                                     if sda17[0:1]=="0":
                                     	 raise SystemExit
                                     sda17=sda17[1:]
@@ -569,12 +572,17 @@ class compression:
 	                                    	T4=0	
 	                                    if T6==T8:
 	                                    	T12=T12+1
+	                                    	T21=T7
+	                                 
 
                                     
                                 
                                     
                                      
-                                                
+                                    T22=T7-T21
+                                    if T22>255:
+                                           cc=1
+                                           
                                           
                                     sda6=sda4
                                     sda4=""
@@ -613,8 +621,20 @@ class compression:
                                             if T7==T10:
                                             	sda17=bin(T9)[2:]
                                             	sda18=bin(T12)[2:]
+                                            	sda30=bin(T22)[2:]
+                                            	
+                                            	
+                                            	lenf=len(sda30)
+                                            	szx4=""
+                                            	xc=8-lenf%8
+                                            	z=0
+                                            	if xc!=0:
+                                            	        if xc!=8:
+                                            	            while z<xc:
+                                            	            	szx4="0"+szx4
+                                            	            	z=z+1
                                             
-                                           
+                                               
                                             
                                             		
                                             	lenf=len(sda18)
@@ -627,7 +647,7 @@ class compression:
                                             	            	szx="0"+szx
                                             	            	z=z+1
                                                	
-                                            	            	
+                                            	sda31=szx4+sda30       	
                                             	sda19=szx+sda18
                                             	sda20=len(sda19)
                                             	sda20=sda20//8
@@ -644,7 +664,7 @@ class compression:
                                             	            while z<xc:
                                             	            	szx2="0"+szx2
                                             	            	z=z+1     
-                                            	sda17=szx2+sda21+sda19+sda17
+                                            	sda17=sda31+szx2+sda21+sda19+sda17
                                             	sda17="1"+sda17+"1"
                                             
        
