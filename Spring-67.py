@@ -1,14 +1,16 @@
 from time import time
 cvf=0
+Portal=2
 import os
 import binascii
 import math
+
+
 
 lenf=0
 name=""
 szx=""
 wer=""
-Deep = int(input("please, Enter Deep (? "))
 namez = input("c: compress or e: extract? ")
 
 
@@ -180,7 +182,7 @@ class compression:
                                 lenf2=len(sda2)
                                 #print(lenf2)
                                 if i==1:
-                                    if lenf7>=(2**40)-1:
+                                    if lenf7>=(2**32)-1:
                                         raise SystemExit
                                         
                                     if lenf7<=0:
@@ -230,7 +232,6 @@ class compression:
                                            
                                            g=1
                                            
-                                                  
                                     if sda2[0:8]=="01111111": 
                                     
                                     	
@@ -248,23 +249,7 @@ class compression:
                                     	 x2 = time()
                                     	 x3=x2-x
                                     	 return print(x3)
-                                        
-                                    	   
-                                    	
-                                    	
-                                    
-                                    
 
-                                    
-
-
-              
-                                        
-               
-                                        	 
-                                        	
-
-                                    g=0
 
                                     sda3=sda2
 
@@ -309,24 +294,19 @@ class compression:
 
                                     Spin=0
                                     
-                                   
-                                   
-                                   
-                                  
-                                    ei=0
-                                    T14=0
-                                    
-                                    sda10=sda3
-                                   
-                                    T1 = int(sda10, 2)
-                                    T10=T1
-                                    T12=0
-                                   
-                                   
                                     T3=1
                                     T4=0
                                     T5=0
                                   
+                                  
+                                    
+                                    
+                                    sda10=sda3
+                                    
+                                   
+                                    T1 = int(sda10, 2)
+                                    T10=T1
+                                    
                                     while T5!=1:
 	                                    T2=T1%2
 	                                    T3=T1
@@ -360,13 +340,26 @@ class compression:
                                     T1=1
                                     T8=0
                                     T6=T4
+                                    
+                                    T9=T4
+                                    
+                                    T3=1
+                                  
+                                    T5=0
+                                    T7=1
+                                    T1=1
+                                    T8=0
+                                    T6=T4
+                                    T15=T4
                                     T9=T4
                                     
                                     T3=1
                                     T4=0
                                     T5=0
+                                    T12=0
+                                   
                                     
-                                    while T7<=2**Deep:
+                                    while T7!=T10+1:
 	                                    T2=T1%2
 	                                    T3=T1
 	                                    
@@ -386,25 +379,28 @@ class compression:
 	                                    	
 	                                    if T3==1 and T4>=2:
 	                                    	T4=T4
+	                                    
 	                                    	T8=T4
 	                                    	T5=T3
-	                                    	T7=T7+1
+	                                    
 	                                    	
 	                                    	T1=T7
-	                                    	T4=0	
+	                                    	T4=0
+	                                    if T6!=T8:
+	                                    	
+	                                    	T7=T7+1
 	                                    if T6==T8:
+	                                    	T7=T7+1
 	                                    	T12=T12+1
-	                                    	T21=T7
-	                                 
+	                               
+                                    T7=T7-1
                                     
-                                    
-                                
-                                    
-                                   
-                                   
-                                   
-                                  
                                     sda17=bin(T7)[2:]
+                                    
+                                    if sda17=="0":
+                                    	raise SystemExit
+                                    sda17=sda17[1:]
+                                    	
                                     	
 
                                     lenf=len(sda17)
@@ -425,45 +421,30 @@ class compression:
 
                                    
                                     sda17=szx+sda17
-                                    
-     
                                          
                                     sda2=sda17
                                     Circle_times2=Circle_times2+1
                                     
                                     
                                     if   Circle_times2==1:
+                                         #print(sda17)
+                                       
+                                         n = int(sda17, 2)
+                                         qqwslenf=len(sda17)
+                                         qqwslenf=(qqwslenf//8)*2
+                                         qqwslenf=str(qqwslenf)
+                                         qqwslenf="%0"+qqwslenf+"x"
+                                         jl=binascii.unhexlify(qqwslenf % n)
+                                         sssssw=len(jl)
+
+                                         szxzzza=""
+                                         szxzs=""
                                             
-                                            n = int(sda17, 2)
-                                            qqwslenf=len(sda17)
-                                            qqwslenf=(qqwslenf//8)*2
-                                            qqwslenf=str(qqwslenf)
-                                            qqwslenf="%0"+qqwslenf+"x"
-                                            jl=binascii.unhexlify(qqwslenf % n)
-                                            sssssw=len(jl)
-
-                                            szxzzza=""
-                                            szxzs=""
-                                            sda2=sda6
-                                              
-                                            f2.write(jl)
-                                            x2 = time()
-                                            x3=x2-x
-                                            xs=float(x3)
-
-                                            Speed=0
-
-                                            if x3!=0:
-
-                                                   Speed=(lenf7//xs)#B/s
-                                                   print(Speed)
-                                                   print("B/s")
-
-                                            if x3==0:
-                                                   print("FAST")
-
-                                            return print(x3)
-
+                                         f2.write(jl)
+                                         x2 = time()
+                                         x3=x2-x
+                                         return print(x3)
+                                        
                                 if i==1:
 
                                     sda17=""
@@ -502,33 +483,13 @@ class compression:
                                     T3=1
                                     T4=0
                                     T5=0
-                                    
-                                    
                                   
-                                    if sda2[0:8]=="01111111"  or lenf6<=56: 
+                                    sda10="1"+sda3
+                                           
                                     
-                                    	
-                                    	 sda17=sda2[8:]
-                                    	 n = int(sda17, 2)
-                                    	 qqwslenf=len(sda17)
-                                    	 qqwslenf=(qqwslenf//8)*2
-                                    	 qqwslenf=str(qqwslenf)
-                                    	 qqwslenf="%0"+qqwslenf+"x"
-                                    	 jl=binascii.unhexlify(qqwslenf % n)
-                                    	 sssssw=len(jl)
-                                    	 szxzzza=""
-                                    	 szxzs=""
-                                    	 f2.write(jl)
-                                    	 x2 = time()
-                                    	 x3=x2-x
-                                    	 return print(x3)
-                                    
-                                    sda10=sda3
                                    
                                     T1 = int(sda10, 2)
                                     T10=T1
-                                    T12=0
-                                   
                                     
                                     while T5!=1:
 	                                    T2=T1%2
@@ -546,11 +507,7 @@ class compression:
 	                                    	T3=(T3*3)+1
 	                                    	T1=T3
 	                                    	T4=T4+1
-	                                    	
-	                                    	
-	                                    	
-	                                    
-	                                    	
+	                                    		
 	                                    if T3==1 and T4>=2:
 	                                    	T4=T4
 	                                    	T5=T3
@@ -559,17 +516,30 @@ class compression:
 	                                    
 	                                  
 	                               
-                                    T7=T1
+                                    T7=1
                                     T1=1
                                     T8=0
                                     T6=T4
+                                    
+                                    T9=T4
+                                    
+                                    T3=1
+                                  
+                                    T5=0
+                                    T7=1
+                                    T1=1
+                                    T8=0
+                                    T6=T4
+                                    T15=T4
                                     T9=T4
                                     
                                     T3=1
                                     T4=0
                                     T5=0
+                                    T12=0
+                                   
                                     
-                                    while T7<=2**Deep:
+                                    while T7!=T10+1:
 	                                    T2=T1%2
 	                                    T3=T1
 	                                    
@@ -589,25 +559,22 @@ class compression:
 	                                    	
 	                                    if T3==1 and T4>=2:
 	                                    	T4=T4
+	                                    
 	                                    	T8=T4
 	                                    	T5=T3
-	                                    	T7=T7-1
+	                                    
+	                                    	
 	                                    	T1=T7
-	                                    	T4=0	
+	                                    	T4=0
+	                                    if T6!=T8:
+	                                    	
+	                                    	T7=T7+1
 	                                    if T6==T8:
+	                                    	T7=T7+1
 	                                    	T12=T12+1
-	                                    	T21=T7
-	                                 
-
-                                    
-                                
-                                    
-                                     
-                                    T22=T7-T21
-                                    if T22>255:
-                                           cc=1
-                                           
-                                          
+	                               
+                                    T7=T7-1
+                                   
                                     sda6=sda4
                                     sda4=""
                                       
@@ -642,10 +609,9 @@ class compression:
                                         if  Circle_times2==1:
                                             #print(lenf6-1)
 
-                                            
-                                            sda17=bin(T7)[2:]
-                                            
-                                            
+                                                        
+                                            sda17=bin(T12)[2:]
+                                          
                                             lenf=len(sda17)
                                             
                                             szx=""
@@ -662,11 +628,9 @@ class compression:
 
                                                                                       
 
-                                            sda17=sda17+szx
-                                            L=len(sda17)
-                                            if L>lenf6F or cc==1:
-                                                     
-                                            	sda17="01111111"+sda3
+                                            sda17=szx+sda17
+                                           
+                                          
 
                                             n = int(sda17, 2)
                                             qqwslenf=len(sda17)
