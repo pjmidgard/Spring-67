@@ -300,13 +300,31 @@ class compression:
                                   
                                   
                                     
-                                    
                                     sda10=sda3
-                                    
                                    
                                     T1 = int(sda10, 2)
-                                    T20=T1
- 
+                                    T10=T1
+                                    
+                                    while T5!=1:
+	                                    T2=T1%2
+	                                    T3=T1
+	                                    
+	                                    if T2==0:
+	                                        T3=T3//2
+	                                        T1=T3
+	                                        T4=T4+1
+	                                        
+	                                       
+	                                    
+	                                    	
+	                                    else:
+	                                    	T3=(T3*3)+1
+	                                    	T1=T3
+	                                    	T4=T4+1
+	                                    		
+	                                    if T3==1 and T4>=2:
+	                                    	T4=T4
+	                                    	T5=T3
 	                                    	
 	                                    	
 	                                    
@@ -335,7 +353,7 @@ class compression:
                                     T12=0
                                    
                                     
-                                    while T12!=T20:
+                                    while T7!=T10:
 	                                    T2=T1%2
 	                                    T3=T1
 	                                    
@@ -370,6 +388,68 @@ class compression:
 	                                    	T12=T12+1
 	                               
                                     T7=T7-1
+                                    T7=1
+                                    T1=1
+                                    T8=0
+                                    T6=T4
+                                    
+                                    T9=T4
+                                    
+                                    T3=1
+                                  
+                                    T5=0
+                                    T7=1
+                                    T1=1
+                                    T8=0
+                                    T6=T4
+                                    T15=T4
+                                    T9=T4
+                                    
+                                    T3=1
+                                    T4=0
+                                    T5=0
+                                   
+                                    Deep=T12+751
+                                    T12=0
+                                   
+                                    
+                                    while T12!=Deep:
+	                                    T2=T1%2
+	                                    T3=T1
+	                                    
+	                                    if T2==0:
+	                                        T3=T3//2
+	                                        T1=T3
+	                                        T4=T4+1
+	                                        
+	                                       
+	                                    
+	                                    	
+	                                    else:
+	                                    	T3=(T3*3)+1
+	                                    	T1=T3
+	                                    	T4=T4+1
+
+	                                    	
+	                                    if T3==1 and T4>=2:
+	                                    	T4=T4
+	                                    
+	                                    	T8=T4
+	                                    	T5=T3
+	                                    
+	                                    	
+	                                    	T1=T7
+	                                    	T4=0
+	                                    if T6!=T8:
+	                                    	
+	                                    	T7=T7+1
+	                                    if T6==T8:
+	                                    	T7=T7+1
+	                                    	T12=T12+1
+	                                    	
+	                               
+                                    T7=T7-1
+                                    
                                     
                                     sda17=bin(T7)[2:]
                                     
@@ -515,7 +595,7 @@ class compression:
                                     T12=0
                                    
                                     
-                                    while T7!=T10+1:
+                                    while T7!=T10:
 	                                    T2=T1%2
 	                                    T3=T1
 	                                    
@@ -550,6 +630,71 @@ class compression:
 	                                    	T12=T12+1
 	                               
                                     T7=T7-1
+                                    T7=1
+                                    T1=1
+                                    T8=0
+                                    T6=T4
+                                    
+                                    T9=T4
+                                    
+                                    T3=1
+                                  
+                                    T5=0
+                                    T7=1
+                                    T1=1
+                                    T8=0
+                                    T6=T4
+                                    T15=T4
+                                    T9=T4
+                                    
+                                    T3=1
+                                    T4=0
+                                    T5=0
+                                   
+                                    Deep=T12-751
+                                    T12=0
+                                   
+                                    
+                                    while T12!=Deep:
+	                                    T2=T1%2
+	                                    T3=T1
+	                                    
+	                                    if T2==0:
+	                                        T3=T3//2
+	                                        T1=T3
+	                                        T4=T4+1
+	                                        
+	                                       
+	                                    
+	                                    	
+	                                    else:
+	                                    	T3=(T3*3)+1
+	                                    	T1=T3
+	                                    	T4=T4+1
+
+	                                    	
+	                                    if T3==1 and T4>=2:
+	                                    	T4=T4
+	                                    
+	                                    	T8=T4
+	                                    	T5=T3
+	                                    
+	                                    	
+	                                    	T1=T7
+	                                    	T4=0
+	                                    if T6!=T8:
+	                                    	
+	                                    	T7=T7+1
+	                                    if T6==T8:
+	                                    	T7=T7+1
+	                                    	T12=T12+1
+	                                    	
+	                               
+                                    T7=T7-1
+                                    
+                                    
+                                    
+                                    
                                    
                                     sda6=sda4
                                     sda4=""
@@ -586,7 +731,7 @@ class compression:
                                             #print(lenf6-1)
 
                                                         
-                                            sda17=bin(T12)[2:]
+                                            sda17=bin(T7)[2:]
                                           
                                             lenf=len(sda17)
                                             
