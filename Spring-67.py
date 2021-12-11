@@ -305,32 +305,8 @@ class compression:
                                     
                                    
                                     T1 = int(sda10, 2)
-                                    T10=T1
-                                    
-                                    while T5!=1:
-	                                    T2=T1%2
-	                                    T3=T1
-	                                    
-	                                    if T2==0:
-	                                        T3=T3//2
-	                                        T1=T3
-	                                        T4=T4+1
-	                                        
-	                                       
-	                                    
-	                                    	
-	                                    else:
-	                                    	T3=(T3*3)+1
-	                                    	T1=T3
-	                                    	T4=T4+1
-	                                    	
-	                                    	
-	                                    	
-	                                    
-	                                    	
-	                                    if T3==1 and T4>=2:
-	                                    	T4=T4
-	                                    	T5=T3
+                                    T20=T1
+ 
 	                                    	
 	                                    	
 	                                    
@@ -359,7 +335,7 @@ class compression:
                                     T12=0
                                    
                                     
-                                    while T7!=T10+1:
+                                    while T12!=T20:
 	                                    T2=T1%2
 	                                    T3=T1
 	                                    
