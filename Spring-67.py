@@ -652,47 +652,51 @@ class compression:
                                     T5=0
                                    
                                     Deep=T12-751
-                                    T12=0
-                                   
-                                    
-                                    while T12!=Deep:
-	                                    T2=T1%2
-	                                    T3=T1
+                                    cc=0
+                                    if Deep<=0:
+                                    	cc=1
+                                    else:
+	                                    T12=0
+	                                   
 	                                    
-	                                    if T2==0:
-	                                        T3=T3//2
-	                                        T1=T3
-	                                        T4=T4+1
-	                                        
-	                                       
+	                                    while T12!=Deep:
+		                                    T2=T1%2
+		                                    T3=T1
+		                                    
+		                                    if T2==0:
+		                                        T3=T3//2
+		                                        T1=T3
+		                                        T4=T4+1
+		                                        
+		                                       
+		                                    
+		                                    	
+		                                    else:
+		                                    	T3=(T3*3)+1
+		                                    	T1=T3
+		                                    	T4=T4+1
+	
+		                                    	
+		                                    if T3==1 and T4>=2:
+		                                    	T4=T4
+		                                    
+		                                    	T8=T4
+		                                    	T5=T3
+		                                    
+		                                    	
+		                                    	T1=T7
+		                                    	T4=0
+		                                    if T6!=T8:
+		                                    	
+		                                    	T7=T7+1
+		                                    if T6==T8:
+		                                    	T7=T7+1
+		                                    	T12=T12+1
+		                                    	
+		                               
+	                                    T7=T7-1
 	                                    
-	                                    	
-	                                    else:
-	                                    	T3=(T3*3)+1
-	                                    	T1=T3
-	                                    	T4=T4+1
-
-	                                    	
-	                                    if T3==1 and T4>=2:
-	                                    	T4=T4
 	                                    
-	                                    	T8=T4
-	                                    	T5=T3
-	                                    
-	                                    	
-	                                    	T1=T7
-	                                    	T4=0
-	                                    if T6!=T8:
-	                                    	
-	                                    	T7=T7+1
-	                                    if T6==T8:
-	                                    	T7=T7+1
-	                                    	T12=T12+1
-	                                    	
-	                               
-                                    T7=T7-1
-                                    
-                                    
                                     
                                     
                                    
@@ -730,8 +734,10 @@ class compression:
                                         if  Circle_times2==1:
                                             #print(lenf6-1)
 
-                                                        
-                                            sda17=bin(T7)[2:]
+                                            if Deep>=0:     
+                                            	sda17=bin(T7)[2:]
+                                            if cc==1:
+                                            	sda17="01111111"+sda3
                                           
                                             lenf=len(sda17)
                                             
