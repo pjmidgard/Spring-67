@@ -737,7 +737,8 @@ class compression:
                                             if Deep>0:     
                                             	sda17=bin(T7)[2:]
                                             if cc==1:
-                                            	sda17="01111111"+sda3
+                                            	raise SystemExit
+                                            	
                                           
                                             lenf=len(sda17)
                                             
