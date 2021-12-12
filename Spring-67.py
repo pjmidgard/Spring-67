@@ -734,7 +734,7 @@ class compression:
                                         if  Circle_times2==1:
                                             #print(lenf6-1)
 
-                                            if Deep>=0:     
+                                            if Deep>0:     
                                             	sda17=bin(T7)[2:]
                                             if cc==1:
                                             	sda17="01111111"+sda3
